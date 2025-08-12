@@ -222,7 +222,6 @@ def quest1(character):
         return completed
     else:
         return completed
-    print("After the defeat of this troll, you retrieve the baby.")
             
 def quest2(character):
     print("You ask the bartender for a drink.\n'Here ya go Sonny.. you know, there's been a problem.")
@@ -248,8 +247,6 @@ def quest2(character):
 
 def quest3(character):
     print("No quest yet")
-
-
     
 def main():
     print("Welcome to Snake Journey!")
@@ -264,7 +261,18 @@ def main():
         quest1Completed = quest1(character)
         if quest1Completed:
             time.sleep(1)
-            print("You continue on your journey..")
+            print("You continue on your journey..\n")
+            time.sleep(1)
+            forestChoice = input("You encounter a forest, will you enter it?\nA: Yes\nB: No\n\n")
+            if forestChoice.upper() == "A":
+                print("You enter the forest..")
+                return forestChoice
+
+            elif forestChoice.upper() == "B":
+                print("You decide to travel the opposite direction.\n")
+                return forestChoice
+            else:
+                print("Not a valid selection!")
     elif op1.upper() == "B":
         quest2(character)
     elif op1.upper() == "C":
